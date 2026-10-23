@@ -1,0 +1,6 @@
+# Compiled Java output
+out/
+*.class
+
+# macOS files
+.DS_Store
