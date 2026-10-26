@@ -1,6 +1,6 @@
 Socadyl — Phase 1 Plan
 CS 3354 — Fall 2026
-Team: Dylan Goertz, Cassie, Sofie.
+Team: Dylan Goertz, Cassie, Sofie, Chris
 Status: AI-assisted starting plan; implementation and test results are pending.
 Commit this file as docs/PHASE1_PLAN.md before starting implementation.
 Replace the two username placeholders with actual GitHub usernames before committing.
@@ -20,7 +20,7 @@ Member	Branch	Main responsibilities
 Dylan Goertz	feature/DylanGoertz	Position, Board, initialization, display, move execution and captures; repository integration
 Cassie	feature/ssiepir	Color, abstract Piece, six piece subclasses, reusable movement helpers and movement tests
 Sofie	feature/d-sof	Move parsing, Player, Game, console loop, turn handling, runnable README and input tests
-
+Christopher Noria    feature/chri651  Compile and run the integrated application; run program and debug, perform and document manual tests; maintain personal AI usage notes; record the Phase 1 demonstration video. |
 
 Each member documents and tests their own code and maintains their own AI notes.
 Dylan manages main and dev. Everyone opens at least one feature-to-dev PR.
@@ -103,6 +103,10 @@ Tasks:
 - Dylan opens the final dev-to-main PR and merges after checks/review.
 - Keep main, dev, and all three remote feature branches until grading.
 - Record and share the demo; one teammate submits both required links.
+- Christopher compiles and runs the integrated application, performs manual tests,
+- and documents the actual results and his AI usage.
+- Records and shares the demonstration video through TXST OneDrive,
+- verifies access to the link, and submits his documentation changes through a pull request into dev for teammate review.
 Manual tests:
 - Run from a clean checkout using only the README commands.
 - Fresh game: E2 E4, E7 E5, G1 F3, B8 C6; inspect the board after each move.
