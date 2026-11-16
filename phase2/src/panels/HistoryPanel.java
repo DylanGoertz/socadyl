@@ -27,6 +27,7 @@ import model.Piece.Color;
  * every move, undo, new game or loaded session. Create and use it on the
  * Swing event-dispatch thread.
  */
+@SuppressWarnings("serial") // Live UI components are not serialized.
 public final class HistoryPanel extends JPanel {
 
     /** Controller that owns the game state and performs undo. */
@@ -64,7 +65,7 @@ public final class HistoryPanel extends JPanel {
 
         setLayout(new BorderLayout(0, 8));
         setBorder(BorderFactory.createEmptyBorder(8, 8, 8, 8));
-        setPreferredSize(new Dimension(260, 400));
+        setPreferredSize(new Dimension(330, 400));
 
         statusLabel.setFont(statusLabel.getFont().deriveFont(Font.BOLD));
         add(statusLabel, BorderLayout.NORTH);
@@ -86,7 +87,9 @@ public final class HistoryPanel extends JPanel {
         undoButton.addActionListener(event -> controller.undo());
 
         JPanel south = new JPanel(new BorderLayout(0, 8));
-        south.add(bottom, BorderLayout.CENTER);
+        JScrollPane captures = new JScrollPane(bottom);
+        captures.setPreferredSize(new Dimension(310, 110));
+        south.add(captures, BorderLayout.CENTER);
         south.add(undoButton, BorderLayout.SOUTH);
         add(south, BorderLayout.SOUTH);
 
@@ -142,10 +145,10 @@ public final class HistoryPanel extends JPanel {
     }
 
     /**
-     * Converts pieces to a row of chess symbols.
+     * Converts pieces to readable type names.
      *
      * @param pieces pieces to show
-     * @return space-separated symbols, or "none" if the list is empty
+     * @return space-separated names, or "none" if the list is empty
      */
     private static String symbols(List<Piece> pieces) {
         if (pieces.isEmpty()) {
@@ -154,28 +157,9 @@ public final class HistoryPanel extends JPanel {
 
         StringBuilder text = new StringBuilder();
         for (Piece piece : pieces) {
-            text.append(symbol(piece)).append(' ');
+            text.append(piece.type().name().toLowerCase(java.util.Locale.ROOT)).append(' ');
         }
         return text.toString().trim();
     }
 
-    /**
-     * Returns the Unicode chess symbol for a piece.
-     *
-     * @param piece piece to represent
-     * @return one-character symbol
-     */
-    private static char symbol(Piece piece) {
-        String white = "♔♕♖♗♘♙";
-        String black = "♚♛♜♝♞♟";
-        int index = switch (piece.type()) {
-            case KING -> 0;
-            case QUEEN -> 1;
-            case ROOK -> 2;
-            case BISHOP -> 3;
-            case KNIGHT -> 4;
-            case PAWN -> 5;
-        };
-        return (piece.color() == Color.WHITE ? white : black).charAt(index);
-    }
 }
