@@ -1,3 +1,8 @@
+> Historical division and interface contract. The final integration now includes
+> all application components. See README.md and SCREENSHOT_GUIDE.md for current
+> run/submission steps. The GUI was completed with Codex assistance at Dylan's
+> request; the original assignments below do not claim authorship of that work.
+
 # Phase 2 integration contract
 
 ## Shared ownership
