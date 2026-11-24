@@ -18,7 +18,7 @@ import pieces.Rook;
  * Validates ordinary movement, ownership, and captures.
  * Does not enforce check or other advanced chess rules.
  */
-public class Board {
+public final class Board {
 
     /** Pieces indexed by row and column; null means empty. */
     private final Piece[][] squares = new Piece[8][8];

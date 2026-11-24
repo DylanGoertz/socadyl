@@ -6,4 +6,3 @@ $files = @(Get-ChildItem phase3/src, phase3/test -Recurse -Filter *.java | ForEa
 if ($LASTEXITCODE -ne 0) { throw 'Compilation failed' }
 & java -cp phase3/out RulesTest
 if ($LASTEXITCODE -ne 0) { throw 'Tests failed' }
-if ($LASTEXITCODE -ne 0) { throw 'Integration tests failed' }
