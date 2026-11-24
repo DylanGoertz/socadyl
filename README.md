@@ -1,5 +1,7 @@
 # Socadyl
 
+[Phase 3: integrated chess game, run instructions and UML](phase3/README.md)
+
 CS 3354 — Software Engineering, Fall 2026, Texas State University.
 
 ## Team
